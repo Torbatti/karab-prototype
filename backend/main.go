@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fs := http.FileServer(http.Dir("./static"))
+	fs := http.FileServer(http.Dir("./frontend"))
 	http.Handle("/", fs)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
