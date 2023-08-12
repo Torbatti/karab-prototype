@@ -32,3 +32,15 @@
 # Backend Terminal Logs | لاگ بکند
 - برای اینکه بدونی کی و کجا سرور کرش شده یه لاگینگ ساده زدم که اماده مرحله پروداکشن اصلا نیست ولی کار راه اندازه
 ![](/Screen/BackendLogs.png)
+
+
+# نحوه ی استفاده
+پیش نیاز: زبان گو و گیت
+```
+git clone https://github.com/Torbatti/karab-prototype.git
+cd karab-prototype
+go run ./backend
+```
+# نکته های قابل توجه
+- برای پروداکشن اماده نیست ! 
+- متصل به دیتا بیس نسیت و داده ها هارد کود شده هستن
