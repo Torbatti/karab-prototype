@@ -187,7 +187,7 @@ body{background-color:var(--c1);}
 #search_box-info-text{
   width:100%;
   
-  margin:0.25rem 0;
+  margin:0 0;
   padding:0 1rem;
 
   background-color:var(--c1);

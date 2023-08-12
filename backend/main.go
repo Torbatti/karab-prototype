@@ -18,7 +18,17 @@ type Job struct {
 }
 
 func main() {
-	fmt.Println("Server Started...")
+	my_rand_m := rand.Int()
+	fmt.Println(my_rand_m)
+
+	fmt.Println("- a Arya Bakhtiari's Side Project")
+	fmt.Println("- Source Code Available for public:")
+	fmt.Println("- https://github.com/Torbatti/karab-prototype")
+
+	fmt.Println("")
+	fmt.Println("- Cluster", my_rand_m)
+	fmt.Println("- Server Started... ")
+	fmt.Println("")
 
 	css := http.FileServer(http.Dir("./public/css"))
 	http.Handle("/css/", http.StripPrefix("/css", css))
@@ -30,6 +40,11 @@ func main() {
 	http.Handle("/fonts/", http.StripPrefix("/fonts", fonts))
 
 	h1 := func(w http.ResponseWriter, r *http.Request) {
+		time.Sleep(350 * time.Microsecond)
+
+		my_rand_m := rand.Intn(1_000_000_000) + 1_000_000_000
+		fmt.Printf("- %v | Page Served: /index.html \n", my_rand_m)
+
 		tmpl := template.Must(template.ParseFiles("./frontend/index.html"))
 		tmpl.Execute(w, nil)
 	}
@@ -62,7 +77,8 @@ func main() {
 	h2 := func(w http.ResponseWriter, r *http.Request) {
 		time.Sleep(350 * time.Microsecond)
 
-		// fmt.Println(r)
+		my_rand_m := rand.Intn(1_000_000_000) + 1_000_000_000
+		fmt.Printf("- %v | Page Served: /search.html \n", my_rand_m)
 
 		tmpl := template.Must(template.ParseFiles("./frontend/search.html"))
 		tmpl.Execute(w, jobs)
@@ -72,8 +88,11 @@ func main() {
 	h3 := func(w http.ResponseWriter, r *http.Request) {
 		time.Sleep(250 * time.Microsecond)
 
+		my_rand_m := rand.Intn(1_000_000_000) + 1_000_000_000
 		rand_num := rand.Intn(7)
-		fmt.Printf("jobs[\"Jobs\"]: %v\n", jobs["Jobs"][rand_num])
+
+		fmt.Printf("- %v | Job Served | ", my_rand_m)
+		fmt.Printf("%v \n", jobs["Jobs"][rand_num])
 
 		// htmlStr := fmt.Sprintf("<li class='list-group-item bg-primary text-white'>%s - %s</li>", title, director)
 		htmlStr := fmt.Sprintf(`
@@ -104,6 +123,9 @@ func main() {
 			tmpl := template.Must(template.ParseFiles("./frontend/search.html"))
 			tmpl.ExecuteTemplate(w, "job-list-element", Job{Id: jobs["Jobs"][rand_num].Id, CompanyTitle: jobs["Jobs"][rand_num].CompanyTitle, JobTitle: jobs["Jobs"][rand_num].JobTitle, City: jobs["Jobs"][rand_num].City, Time: jobs["Jobs"][rand_num].Time})
 		}
+		my_rand_m := rand.Intn(1_000_000_000) + 1_000_000_000
+		fmt.Printf("- %v | Next Page Served. \n", my_rand_m)
+
 	}
 	http.HandleFunc("/next-page", h4)
 
