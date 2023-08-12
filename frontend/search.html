@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>فهرست شغل ها</title>
+  <meta name="description" content="سایت کاریابی برای همه">
+  <meta name="keywords" content="کاریابی, کارآموزی, ">
+  <meta name="author" content="آریا بختیاری">
+
+  <link rel="stylesheet" href="/css/albors.css">
+  <link rel="stylesheet" href="/css/search.css">
+
+  <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</head>
+<body class="tc2">
+
+  <div id="nav" class="">
+    <div id="header" class="flex jcontent-between aitems-center">
+
+      <div id="right-header" class="flex mid-gap aitems-center">
+
+        <a href="/" id="karab" class="text-bold">کارآب</a>
+        <div id="divider" class="text-bold">|</div>
+
+        <div id="header-links" class="flex mid-gap">
+          <a href="/jobs-lists.html">فرصت های شغلی</a>
+          <a href="/">آکادمی</a>
+          <a href="/">رزومه ساز</a>
+          <a href=""></a>
+        </div>
+
+      </div>
+
+      <div id="left-header" class="text-bold flex aitems-center high-gap">
+        <a href="/" id="login">ورود</a>
+        <a href="/" id="signup">ثبت نام</a>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="search" class="flex aitems-center jcontent-center">
+    <div id="search-inputs" class="flex mid-gap">
+      <div id="searcher" class="flex jcontent-evenly aitems-center">
+        <img src="/svg/search.svg" alt="">
+        <input type="text" placeholder="عنوان شغل , عنوان شرکت , ...">
+      </div>
+
+      <div id="city" class="flex aitems-center jcontent-evenly">
+        <h1> همه استان ها </h1>
+        <img src="/svg/to.svg" alt="">
+      </div>
+      
+      <div id="job" class="flex aitems-center jcontent-evenly">
+        <h1> همه ی حوزه ها</h1>
+        <img src="/svg/to.svg" alt="">
+      </div>
+
+      <a href="/search.html" id="search_bottom" class="flex aitems-center jcontent-center"><h1 class="">جستجو در مشاغل</h1></a>
+    </div>
+  </div>
+
+  <div id="search_for" class="flex aitems-center mid-gap tc2">
+    <h1>جست و جو برای : </h1>
+    <h1>استخدام در تهران</h1>
+  </div>
+
+  <div id="search_box-div"><div id="search_box" class="flex">
+    <div id="search_box-list">
+      <div id="jobs" class="flex flex-col mid-gap">
+        {{ range .Jobs }}
+        {{ block "job-list-element" .}}
+        <div id="a_job" class="flex flex-col" hx-post="/jobs" hx-trigger="click" hx-target="#search_box-info-text" hx-swap="innerHTML">
+          <div id="top_bar" class="flex aitems-center">
+            <div id="img">
+
+            </div>
+            <div id="text" class="flex flex-col low-gap">
+              <h1 class="tc3 text-small">{{ .CompanyTitle }} </h1>
+              <h1 class="text-large">{{ .JobTitle }}</h1>
+              <h1 id="tag" class="text-xsmall">استخدام</h1>
+            </div>
+          </div>
+          
+          <div id="bottom_bar" class="flex aitems-center jcontent-between">
+            <h1 class="text-small">{{  .Time }} در {{ .City }}</h1>
+            <h1 class="text-small">اطلاعات بیشتر</h1>
+          </div>
+          
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+      <div id="next-jobs">
+        <div id="next_pagers" class="flex jcontent-center low-gap text-small" hx-post="/next-page" hx-trigger="click" hx-target="#jobs" hx-swap="innerHTML">
+          <h1>۱</h1>
+          <h1>۲</h1>
+          <h1>۳</h1>
+          <h1>۴</h1>
+          <h1>۵</h1>
+          <h1>۶</h1>
+        </div>
+      </div>
+    </div>
+    <div id="search_box-info">
+      <div id="search_box-info-text">
+
+      </div>
+    </div>
+  </div></div>
+  
+
+
+</body>
+</html>
