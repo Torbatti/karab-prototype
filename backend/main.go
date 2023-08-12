@@ -38,11 +38,11 @@ func main() {
 	jobs := map[string][]Job{
 		"Jobs": {
 			{Id: "1", CompanyTitle: "شرکت سهامی عام اول", JobTitle: "منشی", City: "تهران", Time: "امروز"},
-			{Id: "2", CompanyTitle: "شرکت سهامی عام اول", JobTitle: "کارگر", City: "تهران", Time: "امروز"},
-			{Id: "3", CompanyTitle: "شرکت سهامی عام اول", JobTitle: "کارشناس برنامه نویسی", City: "تهران", Time: "دیروز"},
-			{Id: "4", CompanyTitle: "شرکت سهامی عام اول", JobTitle: "منشی", City: "تهران", Time: "دیروز"},
+			{Id: "2", CompanyTitle: "شرکت سهامی خاص اول", JobTitle: "کارگر", City: "تهران", Time: "امروز"},
+			{Id: "3", CompanyTitle: "شرکت سهامی خاص دوازدهم", JobTitle: "کارشناس برنامه نویسی", City: "تهران", Time: "دیروز"},
+			{Id: "4", CompanyTitle: "شرکت سهامی عام دهم", JobTitle: "منشی", City: "تهران", Time: "دیروز"},
 
-			{Id: "5", CompanyTitle: "شرکت سهامی عام سوم", JobTitle: "مدرس زبان", City: "تهران", Time: "امروز"},
+			{Id: "5", CompanyTitle: "شرکت سهامی عام چهارم", JobTitle: "مدرس زبان", City: "تهران", Time: "امروز"},
 			{Id: "6", CompanyTitle: "شرکت سهامی عام سوم", JobTitle: "حسابداری", City: "تهران", Time: "دیروز"},
 
 			{Id: "7", CompanyTitle: "شرکت سهامی عام چهاردهم", JobTitle: "طراح لباس", City: "تهران", Time: "امروز"},

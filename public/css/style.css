@@ -155,11 +155,13 @@ body{background-color:var(--c1);}
 }
 
 .show-boxi{
-  width:296px;
-  height:160px;
+
   
   box-shadow: 0px 2px 2px 2px #aaaaaabf;
   border-radius:1rem;
+}
+.show-boxi:hover{
+  background-color:#ebebeb;
 }
 .show-navigators{
   width: 48px;
@@ -184,3 +186,27 @@ body{background-color:var(--c1);}
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);
 }
 .dodoo img{width:48px;}
+
+
+
+
+
+#top{
+  width:296px;
+  height:160px;
+
+  padding:0 8px;
+}
+
+.show-boxi #image{
+  width:96px;
+  height:140px;
+
+  border:2px solid #dddcdc;
+  border-radius:4px;
+
+}
+
+.show-boxi #text{
+  height:160px;
+}
